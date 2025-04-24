@@ -19,13 +19,6 @@ This is a static HTML/CSS/JavaScript implementation of the NoSwipe dating websit
 - `js/script.js` - JavaScript for interactivity and animations
 - `img/` - Directory for image assets
 
-## Setup Instructions
-
-1. Download or clone this repository
-2. Place the NoSwipe logo image in the `img/` directory as `logo.png`
-3. Place the hero image in the `img/` directory as `hero.png`
-4. Open `index.html` in your web browser to view the site
-
 ## Notes
 
 - This is a frontend-only implementation with no backend functionality
