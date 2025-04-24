@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoSwipe - Love begins when swiping ends</title>
+  <meta name="description"
+    content="NoSwipe is a dating app that focuses on meaningful connections instead of endless swiping. Find your perfect match based on compatibility, not just appearance." />
+  <meta name="author" content="NoSwipe" />
+
+  <meta property="og:title" content="NoSwipe - Love begins when swiping ends" />
+  <meta property="og:description"
+    content="NoSwipe is a dating app that focuses on meaningful connections instead of endless swiping." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/Logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@NoSwipe" />
+  <meta name="twitter:image" content="img/logo.png" />
+
+  <link rel="icon" href="img/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div id="loading-animation" class="fixed-inset flex-center bg-white z-100">
+    <div class="relative">
+      <img src="img/logo.png" alt="NoSwipe Logo" class="logo-pulse">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Main app container -->
+  <div id="app" class="min-h-screen">
+    <!-- Header will be loaded here via jQuery -->
+    <header id="site-header" class="fixed w-full top-0 z-50 transition-all py-4 bg-transparent">
+      <div class="container-custom flex justify-between items-center ">
+        <a href="#home" class="flex items-center gap-2 logo-link">
+          <img src="img/logo.png" style="width:80px;height: auto;" alt="NoSwipe Logo"
+            class="h-10 w-auto transition-transform hover-scale">
+          <span class="text-xl font-bold text-gray-800">No Swipe</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <a href="#home" class="nav-link active" data-page="home">Home</a>
+          <a href="#about" class="nav-link whitespace-nowrap" data-page="about">About Us</a>
+          <!-- <a href="#features" class="nav-link" data-page="features">Features</a> -->
+          <a href="#how-it-works" class="nav-link" data-page="how-it-works">How it Works</a>
+          <a href="#faq" class="nav-link" data-page="faq">FAQ</a>
+          <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+          <a href="#signup" class="nav-link whitespace-nowrap" data-page="signup">Sign Up</a>
+          <a href="#blog" class="nav-link" data-page="blog">Blog</a>
+          <a href="#pricing" class="nav-link" data-page="pricing">Pricing</a>
+          <a href="#testimonials" class="nav-link" data-page="testimonials">Testimonials</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="mobile-menu-button">
+          <span class="mobile-menu-icon"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-nav" class="mobile-nav">
+        <div class="container-custom py-4 flex flex-col space-y-4">
+          <a href="#home" class="mobile-nav-link" data-page="home">Home</a>
+          <a href="#about" class="mobile-nav-link" data-page="about">About Us</a>
+          <!-- <a href="#features" class="mobile-nav-link" data-page="features">Features</a> -->
+          <a href="#how-it-works" class="mobile-nav-link" data-page="how-it-works">How it Works</a>
+          <a href="#faq" class="mobile-nav-link" data-page="faq">FAQ</a>
+          <a href="#contact" class="mobile-nav-link" data-page="contact">Contact</a>
+          <a href="#signup" class="mobile-nav-link" data-page="signup">Sign Up</a>
+          <a href="#blog" class="mobile-nav-link" data-page="blog">Blog</a>
+          <a href="#pricing" class="mobile-nav-link" data-page="pricing">Pricing</a>
+          <a href="#testimonials" class="mobile-nav-link" data-page="testimonials">Testimonials</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Home Page Content (Default) -->
+      <section id="home-content" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="container-custom flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 animate-slide-up">
+              <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-800 mb-6">
+                Love begins
+                <span class="text-noswipe-pink"> when swiping </span>
+                ends.
+              </h1>
+              <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                Discover meaningful connections that go beyond appearance. NoSwipe helps you find the perfect match
+                based on shared interests and authentic conversations.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#signup" class="btn-primary inline-flex items-center">
+                  Get Started <span class="arrow-right"></span>
+                </a>
+                <a href="#how-it-works"
+                  class="inline-flex items-center font-medium text-noswipe-pink hover-underline px-6 py-3 transition-all">
+                  Learn More <span class="arrow-right"></span>
+                </a>
+              </div>
+            </div>
+
+            <div class="md:w-1/2 mt-12 md:mt-0 animate-slide-in-right">
+              <div class="relative">
+                <img src="img/hero.png" alt="NoSwipe Dating" class="w-full max-w-md mx-auto">
+                <div class="decorative-blur-circle"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative shapes -->
+          <div class="decorative-circle decorative-circle-left"></div>
+          <div class="decorative-circle decorative-circle-right"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">Why Choose NoSwipe</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Experience a dating app that prioritizes meaningful connections over endless swiping. Here's how NoSwipe
+                is transforming digital dating.
+              </p>
+            </div>
+
+            <div class="features-grid">
+              <div class="feature-card" data-delay="0">
+                <div class="feature-icon">
+                  <span class="icon-heart"></span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Meaningful Matches</h3>
+                <p class="text-gray-600">Our algorithm focuses on compatibility beyond photos, helping you find genuine
+                  connections based on shared interests and values.</p>
+              </div>
+
+              <div class="feature-card" data-delay="200">
+                <div class="feature-icon">
+                  <span class="icon-message"></span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Quality Conversations</h3>
+                <p class="text-gray-600">Engage in meaningful conversations with conversation starters tailored to your
+                  match's profile and interests.</p>
+              </div>
+
+              <div class="feature-card" data-delay="400">
+                <div class="feature-icon">
+                  <span class="icon-users"></span>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Community Events</h3>
+                <p class="text-gray-600">Join virtual and in-person events to meet potential matches in a relaxed,
+                  pressure-free environment.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works-section">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">How NoSwipe Works</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Our 4-step process helps you find genuine connections without endless swiping.
+              </p>
+            </div>
+
+            <div class="steps-grid">
+              <!-- Connecting Line (Desktop) -->
+              <div class="connecting-line"></div>
+
+              <div class="step-item" data-step="1">
+                <div class="step-number">1</div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Create Your Profile</h3>
+                <p class="text-gray-600 text-center">Build a profile that highlights your personality, interests,
+                  values, and what you're looking for in a relationship.</p>
+              </div>
+
+              <div class="step-item" data-step="2">
+                <div class="step-number">2</div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Get Matched</h3>
+                <p class="text-gray-600 text-center">Our algorithm finds compatible matches based on shared interests,
+                  values, and relationship goals—not just photos.</p>
+              </div>
+
+              <div class="step-item" data-step="3">
+                <div class="step-number">3</div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Connect Meaningfully</h3>
+                <p class="text-gray-600 text-center">Start conversations with personalized icebreakers based on your
+                  match's profile. No generic pickup lines needed.</p>
+              </div>
+
+              <div class="step-item" data-step="4">
+                <div class="step-number">4</div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Meet & Connect</h3>
+                <p class="text-gray-600 text-center">When you're ready, schedule a virtual or in-person date. We provide
+                  tips and suggestions to help your date go smoothly.</p>
+              </div>
+            </div>
+
+            <div class="text-center mt-16 fade-in-element">
+              <a href="#signup" class="btn-primary">Get Started Now</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">Success Stories</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Read about the real connections formed on NoSwipe. These couples found love without endless swiping.
+              </p>
+            </div>
+
+            <div class="testimonials-slider">
+              <div class="testimonial-slides">
+                <div class="testimonial-slide active">
+                  <div class="testimonial-card">
+                    <div class="testimonial-header">
+                      <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af" alt="Sarah & Michael"
+                        class="testimonial-image">
+                      <div>
+                        <h4 class="testimonial-name">Sarah & Michael</h4>
+                        <p class="testimonial-location">New York, NY</p>
+                      </div>
+                    </div>
+                    <p class="testimonial-quote">"After countless disappointing dating app experiences, NoSwipe brought
+                      us together through shared interests in hiking and photography. We're now planning our wedding for
+                      next summer!"</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-slide">
+                  <div class="testimonial-card">
+                    <div class="testimonial-header">
+                      <img src="https://images.unsplash.com/photo-1623184663110-89ba5b565eb6" alt="David & Emily"
+                        class="testimonial-image">
+                      <div>
+                        <h4 class="testimonial-name">David & Emily</h4>
+                        <p class="testimonial-location">Seattle, WA</p>
+                      </div>
+                    </div>
+                    <p class="testimonial-quote">"The conversation prompts on NoSwipe helped us get past the awkward
+                      small talk and forge a real connection. We've been together for 8 months now!"</p>
+                  </div>
+                </div>
+
+                <div class="testimonial-slide">
+                  <div class="testimonial-card">
+                    <div class="testimonial-header">
+                      <img src="https://images.unsplash.com/photo-1541216970279-affbfdd55aa8" alt="James & Alex"
+                        class="testimonial-image">
+                      <div>
+                        <h4 class="testimonial-name">James & Alex</h4>
+                        <p class="testimonial-location">Austin, TX</p>
+                      </div>
+                    </div>
+                    <p class="testimonial-quote">"As a same-sex couple, we appreciated how inclusive NoSwipe is. The
+                      matching algorithm truly understood what we were looking for in a partner."</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-dots">
+                <button class="testimonial-dot active" data-slide="0"></button>
+                <button class="testimonial-dot" data-slide="1"></button>
+                <button class="testimonial-dot" data-slide="2"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog-section">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">Dating Tips & Insights</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Explore our collection of articles on dating advice, relationship tips, and insights on making
+                meaningful connections.
+              </p>
+            </div>
+
+            <div class="blog-grid">
+              <div class="blog-card" data-delay="0">
+                <div class="blog-image-container">
+                  <img src="https://images.unsplash.com/photo-1516302561073-15c4c0c8c8d6"
+                    alt="5 Ways to Create an Authentic Dating Profile" class="blog-image">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="blog-category">Dating Tips</span>
+                    <span class="blog-date">Apr 15, 2023</span>
+                  </div>
+                  <h3 class="blog-title">5 Ways to Create an Authentic Dating Profile</h3>
+                  <p class="blog-excerpt">Learn how to showcase your genuine self to attract meaningful connections
+                    instead of surface-level matches.</p>
+                  <a href="#blog/1" class="blog-link">Read More <span class="arrow-right"></span></a>
+                </div>
+              </div>
+
+              <div class="blog-card" data-delay="200">
+                <div class="blog-image-container">
+                  <img src="https://images.unsplash.com/photo-1516727003284-a96541e51e9c"
+                    alt="The Psychology Behind Meaningful Relationships" class="blog-image">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="blog-category">Relationship Advice</span>
+                    <span class="blog-date">Mar 22, 2023</span>
+                  </div>
+                  <h3 class="blog-title">The Psychology Behind Meaningful Relationships</h3>
+                  <p class="blog-excerpt">Understand the psychological factors that contribute to lasting relationships
+                    beyond physical attraction.</p>
+                  <a href="#blog/2" class="blog-link">Read More <span class="arrow-right"></span></a>
+                </div>
+              </div>
+
+              <div class="blog-card" data-delay="400">
+                <div class="blog-image-container">
+                  <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa"
+                    alt="Virtual Dating: Making Digital Connections Feel Real" class="blog-image">
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="blog-category">App Insights</span>
+                    <span class="blog-date">Feb 10, 2023</span>
+                  </div>
+                  <h3 class="blog-title">Virtual Dating: Making Digital Connections Feel Real</h3>
+                  <p class="blog-excerpt">Tips and ideas for creating meaningful virtual dating experiences when you
+                    can't meet in person.</p>
+                  <a href="#blog/3" class="blog-link">Read More <span class="arrow-right"></span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-12">
+              <a href="#blog" class="btn-primary">View All Articles</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">Frequently Asked Questions</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Have questions about NoSwipe? We have answers!
+              </p>
+            </div>
+
+            <div class="faq-container">
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>How is NoSwipe different from other dating apps?</span>
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>NoSwipe replaces endless swiping with meaningful connections based on compatibility. Our algorithm
+                    matches people based on shared interests, values, and relationship goals—not just photos. We
+                    encourage quality conversations through personalized icebreakers and provide tools to help your
+                    relationship grow.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is NoSwipe free to use?</span>
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>NoSwipe offers both free and premium subscription options. The free version includes limited
+                    matches and basic features, while premium subscriptions unlock unlimited matches, advanced filters,
+                    read receipts, and priority matching. Visit our Pricing page for detailed information.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>How does the matching algorithm work?</span>
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Our proprietary algorithm analyzes your profile information, interests, values, and relationship
+                    preferences to suggest compatible matches. Unlike other apps, we don't just show you everyone in
+                    your area—we focus on quality matches with high compatibility potential.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Can I use NoSwipe on both iOS and Android?</span>
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes! NoSwipe is available for download on both iOS and Android devices. We also have a web version
+                    accessible from your computer.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>How can I stay safe while using NoSwipe?</span>
+                  <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                  <p>We take safety seriously at NoSwipe. All profiles are verified, we offer in-app video calling
+                    before meeting in person, provide safety tips before first dates, and include an emergency contact
+                    feature. We also have a robust reporting system and responsive support team.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+          <div class="container-custom">
+            <div class="cta-content">
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to find a meaningful connection?
+              </h2>
+              <p class="text-white/90 text-lg mb-8">
+                Join thousands of singles finding love without the endless swiping.
+                <b>NoSwipe</b> is coming soon—be the first to start your journey to real, authentic connection.
+              </p>
+              <div class="cta-buttons">
+                <a href="#signup" class="cta-primary-btn">
+                  Register Now <span class="arrow-right"></span>
+                </a>
+                <a href="#how-it-works" class="cta-secondary-btn">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-20 bg-white">
+          <div class="container-custom">
+            <div class="text-center mb-16">
+              <h2 class="section-title mx-auto">Get in Touch</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+                Have questions or feedback? We'd love to hear from you. Reach out to us directly via email or Instagram.
+              </p>
+            </div>
+
+            <div class="max-w-xl mx-auto text-center space-y-6 text-lg text-gray-700">
+              <p>
+                📧 <strong>Email:</strong>
+                <a href="mailto:noswipedatingapp@gmail.com" class="text-noswipe-pink hover-underline">
+                  noswipedatingapp@gmail.com
+                </a>
+              </p>
+
+              <p>
+                📸 <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/noswipedatingapp?igsh=MTZnNXk4d3ZibDEzbA==" target="_blank"
+                  rel="noopener noreferrer" class="text-noswipe-pink hover-underline">
+                  @noswipedatingapp
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+
+
+
+      <!-- About Page Content (Initially Hidden) -->
+      <section id="about-content" class="page-content">
+        <section class="about-hero-section">
+          <div class="container-custom">
+            <h1 class="text-4xl font-bold text-center mb-8">About NoSwipe</h1>
+            <p class="text-gray-600 text-center max-w-3xl mx-auto mb-16">
+              We're reimagining digital dating by creating meaningful connections that go beyond appearance.
+            </p>
+
+            <div class="about-grid">
+              <div class="about-text">
+                <h2 class="text-2xl font-semibold mb-4">Our Story</h2>
+                <p class="text-gray-600 mb-4">
+                  NoSwipe was born out of frustration with the superficial nature of traditional dating apps. Our
+                  founders, a group of friends tired of endless swiping with little meaningful connection, decided to
+                  create something different.
+                </p>
+                <p class="text-gray-600">
+                  Launched in 2025, NoSwipe focuses on compatibility based on shared interests, values, and authentic
+                  conversations. We believe real connections start when swiping ends.
+                </p>
+              </div>
+              <div class="about-image">
+                <img src="img/logo.png" alt="NoSwipe Logo" class="about-logo">
+                <div class="about-image-blur"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mission-section">
+          <div class="container-custom">
+            <h2 class="text-3xl font-semibold text-center mb-12">Our Mission</h2>
+
+            <div class="mission-grid">
+              <div class="mission-card">
+                <h3 class="text-xl font-medium mb-4">Authentic Connections</h3>
+                <p class="text-gray-600">
+                  We prioritize compatibility based on personality, interests, and values over superficial traits.
+                </p>
+              </div>
+
+              <div class="mission-card">
+                <h3 class="text-xl font-medium mb-4">Inclusive Experience</h3>
+                <p class="text-gray-600">
+                  We've built NoSwipe to be welcoming and inclusive for all individuals regardless of background or
+                  orientation.
+                </p>
+              </div>
+
+              <div class="mission-card">
+                <h3 class="text-xl font-medium mb-4">Meaningful Interactions</h3>
+                <p class="text-gray-600">
+                  Our platform encourages substantive conversations that lead to deeper connections.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Not Found Content (404 Page) -->
+      <section id="not-found-content" class="page-content">
+        <div class="not-found-container">
+          <h1 class="text-6xl font-bold mb-4 text-noswipe-pink">404</h1>
+          <p class="text-xl text-gray-600 mb-8">Oops! This page seems to have gone on a date with someone else.</p>
+          <a href="#home" class="btn-primary">Return to Home</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container-custom">
+        <div class="footer-grid">
+          <!-- Logo and Description -->
+          <div class="footer-branding">
+            <a href="#home" class="footer-logo">
+              <img src="img/logo.png" alt="NoSwipe Logo" class="h-10 w-auto" style="width: 200px;margin-left: 60px;">
+              <!-- <span class="text-xl font-bold text-gray-800">NoSwipe</span> -->
+            </a>
+            <p class="footer-description">
+              Find meaningful connections that go beyond appearances. At NoSwipe, we're redefining digital dating.
+            </p>
+            <div class="footer-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                aria-label="Facebook">
+                <span class="icon-facebook"></span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link"
+                aria-label="Twitter">
+                <span class="icon-twitter"></span>
+              </a>
+              <a href="https://www.instagram.com/noswipedatingapp?igsh=MTZnNXk4d3ZibDEzbA==" target="_blank"
+                rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                <span class="icon-instagram"></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-nav">
+              <li><a href="#about" class="footer-link">About Us</a></li>
+              <!-- <li><a href="#features" class="footer-link">Features</a></li> -->
+              <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+              <li><a href="#pricing" class="footer-link">Pricing</a></li>
+              <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Resources</h4>
+            <ul class="footer-nav">
+              <li><a href="#blog" class="footer-link">Blog</a></li>
+              <li><a href="#faq" class="footer-link">FAQs</a></li>
+              <li><a href="#privacy-policy" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+              <li><a href="#contact" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact" id="foot-contact">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-contact-info">
+              <li>noswipedatingapp@gmail.com</li>
+              <li>1-800-NOSWIPE</li>
+              <li>123 Dating Street, Love City, LC 12345</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; <span id="current-year">2023</span> NoSwipe. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#privacy-policy" class="footer-legal-link">Privacy Policy</a>
+            <a href="#terms" class="footer-legal-link">Terms of Service</a>
+            <a href="#sitemap" class="footer-legal-link">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+      <span class="arrow-up"></span>
+    </button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
